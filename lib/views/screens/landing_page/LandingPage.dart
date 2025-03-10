@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:yourhome/utils/routers.dart';
+import 'package:yourhome/utils/core/ButtonWidget.dart';
 
 class LandingPage extends StatefulWidget {
   const LandingPage({super.key});
@@ -25,44 +27,45 @@ class _LandingPageState extends State<LandingPage> {
                   child: Column(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
+                      Image(
+                        image: AssetImage('assets/images/logo-gray.png'),
+                        width: 500,
+                      ),
+                      SizedBox(height: 20),
                       Text(
-                        'Your Home',
+                        'Bridging the Physical and Digital Worlds for a Smarter, More Connected Tomorrow.',
                         style: TextStyle(
+                          fontStyle: FontStyle.italic,
                           fontSize: 24,
-                          fontWeight: FontWeight.bold,
-                          color: Colors.white,
+                          color: Colors.black,
                         ),
+                      ),
+                      SizedBox(height: 50),
+                      ButtonWidget(
+                          iconPath: "assets/images/email.png",
+                          label: "Login with Email",
+                          color: Color(0xffff7337),
+                          width: 300,
+                          height: 50,
+                          onPressed: () => {
+                            Navigator.pushNamed(context, '/login')
+                          }
+                      ),
+                      SizedBox(height: 10),
+                      Text("OR"),
+                      SizedBox(height: 10),
+                      ButtonWidget(
+                          iconPath: "",
+                          label: "Create a new account",
+                          color: Colors.black,
+                          width: 300,
+                          height: 50,
+                          onPressed: () => {
+                            AppRoutes.goToSignUpPage(context)
+                          }
                       ),
                     ],
                   ),
-                ),
-              ),
-              Padding(
-                padding: const EdgeInsets.all(20),
-                child: Column(
-                  children: [
-                    SizedBox(
-                      width: double.infinity,
-                      height: 50,
-                      child: ElevatedButton(
-                        onPressed: () {
-                          Navigator.pushNamed(context, '/login');
-                        },
-                        child: Text('Login'),
-                      ),
-                    ),
-                    SizedBox(height: 20),
-                    SizedBox(
-                      width: double.infinity,
-                      height: 50,
-                      child: ElevatedButton(
-                        onPressed: () {
-                          Navigator.pushNamed(context, '/register');
-                        },
-                        child: Text('Register'),
-                      ),
-                    ),
-                  ],
                 ),
               ),
             ],
