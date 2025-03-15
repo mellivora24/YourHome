@@ -16,8 +16,28 @@ dev_dependencies:
     sdk: flutter
   flutter_lints: ^5.0.0
 
+  # For dev
+  intl: ^0.19.0
+  provider: ^6.0.0
+  easy_localization: ^3.0.7+1
+
+
 flutter:
   uses-material-design: true
   assets:
     - assets/
     - assets/images/
+    - assets/icons/
+    - assets/translations/
+
+#  fonts:
+#    - family: Inter
+#      fonts:
+#        - asset: fonts/Inter-Regular.ttf
+#          weight: 400
+#        - asset: fonts/Inter-Bold.ttf
+#          weight: 700
+#        - asset: fonts/Inter-ExtraBold.ttf
+#          weight: 800
+#        - asset: fonts/Inter-Black.ttf
+#          weight: 900

@@ -12,7 +12,8 @@ class _SignUpPageState extends State<SignUpPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        body: DecoratedBox(
+        body: SingleChildScrollView(
+          child: DecoratedBox(
           decoration: BoxDecoration(
             image: DecorationImage(
               image: AssetImage('assets/images/background.png'),
@@ -32,6 +33,7 @@ class _SignUpPageState extends State<SignUpPage> {
               ),
             ],
           ),
+        )
         )
     );
   }

@@ -1,9 +1,19 @@
 import 'package:flutter/material.dart';
 import 'package:yourhome/utils/routers.dart';
+import 'package:easy_localization/easy_localization.dart';
 
-void main() {
+void main() async {
   WidgetsFlutterBinding.ensureInitialized();
-  runApp(MyApp());
+  await EasyLocalization.ensureInitialized();
+
+  runApp(
+    EasyLocalization(
+      path: 'assets/translations',
+      fallbackLocale: Locale('en'),
+      supportedLocales: [Locale('en'), Locale('vi')],
+      child: MyApp(),
+    ),
+  );
 }
 
 class MyApp extends StatelessWidget {
@@ -17,9 +27,12 @@ class MyApp extends StatelessWidget {
         primarySwatch: Colors.blue,
         visualDensity: VisualDensity.adaptivePlatformDensity,
       ),
+      locale: context.locale,
       routes: AppRoutes.routes,
-      initialRoute: AppRoutes.LANDINGPAGE,
       debugShowCheckedModeBanner: false,
+      initialRoute: AppRoutes.LANDINGPAGE,
+      supportedLocales: context.supportedLocales,
+      localizationsDelegates: context.localizationDelegates,
     );
   }
 }
