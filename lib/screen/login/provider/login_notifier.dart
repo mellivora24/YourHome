@@ -8,7 +8,9 @@ class LoginNotifier extends BaseNotifier{
 
   UserModel userModel = UserModel(); // khai báo model
   UserModel get model => userModel; // getter
-  LoginService loginService = LoginService(); // khai báo service
+  LoginService loginService = LoginService();
+
+  get emailController => null; // khai báo service
 
 
   Future<bool> login({required String username, required String password, }) async {
