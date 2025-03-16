@@ -1,11 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:yourhome_web/utils/router_names.dart';
-import 'package:yourhome_web/utils/routers.dart';
 import 'package:easy_localization/easy_localization.dart';
-import 'package:yourhome_web/utils/widget/button_widget.dart';
+
+import 'package:yourhome_web/utils/components/button.dart';
 
 class LandingScreen extends StatefulWidget {
   const LandingScreen({super.key});
+  static const String routeName = '/landing_screen';
 
   @override
   State<LandingScreen> createState() => _LandingScreenState();
@@ -75,7 +76,9 @@ class _LandingScreenState extends State<LandingScreen> {
                       iconPath: "",
                       backgroundColor: Colors.black,
                       label: 'create_account_button'.tr(),
-                      onPressed: () {},
+                      onPressed: () {
+                        Navigator.pushNamed(context, RouteNames.signUpScreen);
+                      },
                     ),
                   ],
                 ),
