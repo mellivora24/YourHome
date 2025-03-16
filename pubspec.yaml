@@ -1,0 +1,47 @@
+name: yourhome_web
+description: "Smart home dashboard for WEB project, run only on WEB."
+publish_to: 'none'
+version: 1.0.0+1
+
+environment:
+  sdk: ^3.6.1
+
+dependencies:
+  flutter:
+    sdk: flutter
+  easy_localization: ^3.0.7+1
+  fluttertoast: ^8.2.12
+  flutter_screenutil: ^5.9.3
+  intl: ^0.19.0
+  hive_ce_flutter: ^2.2.0
+  dio: ^5.8.0+1
+  firebase_messaging: ^15.2.3
+  flutter_local_notifications: ^18.0.1
+  flame_audio: ^2.11.0
+  firebase_remote_config: ^5.4.1
+  provider: ^6.1.2
+  flutter_launcher_icons: ^0.14.3
+  flutter_dotenv: ^5.2.1
+  error_stack: ^1.10.2
+  cupertino_icons: ^1.0.8
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^5.0.0
+
+flutter_icons:
+  android: true
+  ios: true
+  image_path: "assets/icons/icon_app.png"
+
+flutter:
+  uses-material-design: true
+
+  assets:
+    - .env
+    - assets/icons/
+    - assets/images/
+    - assets/images/logos/
+    - assets/translations/
+    - assets/images/backgrounds/
