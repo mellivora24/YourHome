@@ -108,7 +108,6 @@ class _SignUpScreenState extends State<SignUpScreen> {
                     Container(
                       width: 500,
                       child: TextField(
-                        // controller: presenter.passwordController,
                         decoration: const InputDecoration(
                           label: Text('Your device ID', style: TextStyle(color: Colors.white)),
                           hintStyle: TextStyle(color: Colors.white),
@@ -127,7 +126,9 @@ class _SignUpScreenState extends State<SignUpScreen> {
                       label: 'CREATE ACCOUNT',
                       width: 300,
                       borderRadius: 50,
-                      onPressed: () {},
+                      onPressed: () {
+                        Navigator.pushNamedAndRemoveUntil(context, RouteNames.homeScreen, (route) => false);
+                      },
                     ),
                     SizedBox(height: 50),
                     TextButton(
