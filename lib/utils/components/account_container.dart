@@ -17,10 +17,49 @@ class AccountContainer extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      width: 200,
+      width: MediaQuery.of(context).size.width * 0.15,
       padding: const EdgeInsets.all(16),
       // color: Colors.grey[300],
-      child: Column(
+      child: (MediaQuery.of(context).size.width > 1800) ? Row(
+        mainAxisAlignment: MainAxisAlignment.start,
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          CircleAvatar(
+            radius: 40,
+            backgroundImage: NetworkImage(avatarUrl),
+          ),
+          const SizedBox(width: 10),
+          Column(
+            mainAxisAlignment: MainAxisAlignment.start,
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Text(
+                'Name: $name',
+                style: const TextStyle(
+                  fontWeight: FontWeight.bold,
+                  fontSize: 16,
+                ),
+              ),
+              const SizedBox(height: 5),
+              Text(
+                'Phone: $phone',
+                style: const TextStyle(
+                  color: Colors.grey,
+                ),
+              ),
+              const SizedBox(height: 5),
+              Text(
+                'Device ID: $deviceId',
+                style: const TextStyle(
+                  color: Colors.grey,
+                ),
+              ),
+            ],
+          ),
+        ],
+      ) :
+      Column(
+        mainAxisAlignment:MainAxisAlignment.start,
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           CircleAvatar(
@@ -29,13 +68,26 @@ class AccountContainer extends StatelessWidget {
           ),
           const SizedBox(height: 10),
           Text(
-            name,
-            style: const TextStyle(fontWeight: FontWeight.bold, fontSize: 16),
+            'Name: $name',
+            style: const TextStyle(
+              fontWeight: FontWeight.bold,
+              fontSize: 16,
+            ),
           ),
           const SizedBox(height: 5),
-          Text(phone, style: const TextStyle(color: Colors.grey)),
+          Text(
+            'Phone: $phone',
+            style: const TextStyle(
+              color: Colors.grey,
+            ),
+          ),
           const SizedBox(height: 5),
-          Text('ID: $deviceId', style: const TextStyle(color: Colors.grey)),
+          Text(
+            'Device ID: $deviceId',
+            style: const TextStyle(
+              color: Colors.grey,
+            ),
+          ),
         ],
       ),
     );

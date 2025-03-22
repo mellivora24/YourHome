@@ -17,8 +17,8 @@ class CustomMenuBar extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      width: 200,
+    return SizedBox(
+      width: MediaQuery.of(context).size.width * 0.15,
       // color: Colors.grey[200],
       child: ListView.builder(
         itemCount: categories.length,

@@ -52,12 +52,14 @@ class _HomeScreenState extends State<HomeScreen> {
         children: [
           Column(
             children: [
+              const SizedBox(height: 10),
               AccountContainer(
                 name: 'John Doe',
                 phone: '+1234567890',
                 deviceId: '1234567890',
-                avatarUrl: 'https://via.placeholder.com/150',
+                avatarUrl: 'https://cdn2.tuoitre.vn/thumb_w/1200/2019/5/8/avatar-publicitystill-h2019-1557284559744252594756.jpg',
               ),
+              const SizedBox(height: 10),
               Expanded(
                 child: CustomMenuBar(
                   selectedIndex: _selectedIndex,
@@ -66,6 +68,10 @@ class _HomeScreenState extends State<HomeScreen> {
                   onItemTapped: _onItemTapped,
                 ),
               ),
+              Image(
+                image: AssetImage('assets/images/logos/logo-gray.png'),
+                width: MediaQuery.of(context).size.width * 0.13,
+              )
             ],
           ),
           Expanded(

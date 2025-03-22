@@ -25,6 +25,7 @@ class CustomContainer extends StatelessWidget {
     return Container(
       width: width,
       height: height,
+      padding: const EdgeInsets.all(16),
       decoration: BoxDecoration(
         color: backgroundColor,
         borderRadius: BorderRadius.circular(borderRadius!),
@@ -42,7 +43,7 @@ class CustomContainer extends StatelessWidget {
                 title!,
                 style: TextStyle(
                   color: textColor,
-                  fontSize: 24,
+                  fontSize: 18,
                   fontWeight: FontWeight.bold
                 ),
               )
@@ -57,7 +58,7 @@ class CustomContainer extends StatelessWidget {
                 content!,
                 style: TextStyle(
                   color: textColor,
-                  fontSize: 32,
+                  fontSize: 24,
                   fontWeight: FontWeight.bold
                 ),
               )
