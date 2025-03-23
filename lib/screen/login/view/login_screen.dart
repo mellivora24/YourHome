@@ -87,7 +87,6 @@ class _LoginScreenState extends State<LoginScreen> {
                   Container(
                     width: 500,
                     child: TextField(
-                      // controller: presenter.passwordController,
                       decoration: const InputDecoration(
                         label: Text('Password', style: TextStyle(color: Colors.white)),
                         hintStyle: TextStyle(color: Colors.white),
@@ -106,7 +105,9 @@ class _LoginScreenState extends State<LoginScreen> {
                     label: 'LOGIN',
                     width: 300,
                     borderRadius: 50,
-                    onPressed: () {},
+                    onPressed: () {
+                      Navigator.pushNamedAndRemoveUntil(context, RouteNames.homeScreen, (route) => false);
+                    },
                   ),
                   SizedBox(height: 50),
                   Row(
