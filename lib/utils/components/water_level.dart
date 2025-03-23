@@ -2,10 +2,14 @@ import 'package:flutter/material.dart';
 import 'dart:math' as math;
 
 class WaterLevel extends StatefulWidget {
+  final double width;
+  final double height;
   final double waterLevel;
 
   const WaterLevel({
     super.key,
+    required this.width,
+    required this.height,
     required this.waterLevel,
   });
 
@@ -17,20 +21,20 @@ class _WaterLevelState extends State<WaterLevel> {
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-      height: 200,
-      width: 300,
+      width: widget.width,
+      height: widget.height,
       child: Container(
         padding: const EdgeInsets.fromLTRB(0, 0, 0, 16),
         decoration: BoxDecoration(
-          color: Colors.grey[300],
+          color: Color(0xFFD9D9D9),
           borderRadius: BorderRadius.circular(10),
-          boxShadow: const [
-            BoxShadow(
-              color: Colors.black26,
-              blurRadius: 5,
-              offset: Offset(0, 2),
-            ),
-          ],
+          // boxShadow: const [
+          //   BoxShadow(
+          //     color: Colors.black26,
+          //     blurRadius: 5,
+          //     offset: Offset(0, 2),
+          //   ),
+          // ],
         ),
         child: Column(
           mainAxisSize: MainAxisSize.min,
@@ -48,7 +52,7 @@ class _WaterLevelState extends State<WaterLevel> {
                   Text(
                     '${widget.waterLevel.toString()}%',
                     style: const TextStyle(
-                      fontSize: 18,
+                      fontSize: 24,
                       fontWeight: FontWeight.bold,
                     ),
                   ),
@@ -56,7 +60,7 @@ class _WaterLevelState extends State<WaterLevel> {
               ),
             ),
             const Text(
-              'Water tank level',
+              'WATER TANK',
               style: TextStyle(
                 fontSize: 18,
                 fontWeight: FontWeight.bold,
@@ -77,13 +81,13 @@ class SemiCircleProgressPainter extends CustomPainter {
   @override
   void paint(Canvas canvas, Size size) {
     Paint backgroundPaint = Paint()
-      ..color = Colors.blue
+      ..color = Color(0xFF3C7FB6)
       ..strokeWidth = 25
       ..style = PaintingStyle.stroke
       ..strokeCap = StrokeCap.square;
 
     Paint progressPaint = Paint()
-      ..color = Colors.orange
+      ..color = Color(0xFFFF7337)
       ..strokeWidth = 25
       ..style = PaintingStyle.stroke
       ..strokeCap = StrokeCap.square;

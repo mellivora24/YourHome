@@ -17,8 +17,9 @@ class AccountContainer extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
+      color: Colors.transparent,
       width: MediaQuery.of(context).size.width * 0.15,
-      padding: const EdgeInsets.all(16),
+      padding: const EdgeInsets.fromLTRB(16, 26, 26, 16),
       // color: Colors.grey[300],
       child: (MediaQuery.of(context).size.width > 1800) ? Row(
         mainAxisAlignment: MainAxisAlignment.start,

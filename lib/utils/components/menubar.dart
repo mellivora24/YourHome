@@ -17,29 +17,29 @@ class CustomMenuBar extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return SizedBox(
+    return Container(
       width: MediaQuery.of(context).size.width * 0.15,
-      // color: Colors.grey[200],
+      color: Colors.transparent,
       child: ListView.builder(
         itemCount: categories.length,
         itemBuilder: (context, index) {
           return GestureDetector(
             onTap: () => onItemTapped(index),
             child: Container(
-              padding: const EdgeInsets.symmetric(vertical: 15, horizontal: 10),
-              color: index == selectedIndex ? Colors.blue : Colors.transparent,
+              padding: const EdgeInsets.symmetric(vertical: 16, horizontal: 10),
+              color: index == selectedIndex ? Color(0xFF3C7FB6) : Color(0x963C7FB6),
               child: Row(
                 children: [
                   Icon(
                     icons[index],
-                    color: index == selectedIndex ? Colors.white : Colors.black,
+                    color: Colors.white,
                   ),
                   const SizedBox(width: 10),
                   Expanded(
                     child: Text(
                       categories[index].tr(),
                       style: TextStyle(
-                        color: index == selectedIndex ? Colors.white : Colors.black,
+                        color: Colors.white,
                         fontWeight: FontWeight.bold,
                       ),
                     ),
